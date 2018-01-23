@@ -6,9 +6,9 @@ $(document).ready(function () {
 });
 $(window).on('load', function () {
     endLoading();
-    animate('.portfolio .title, .portfolio .subtitle',2700);
-    animate('.line',3000);
-    animate('.port-container,.slick-arrow',4500);
+    animateIt('.portfolio .title, .portfolio .subtitle',2700);
+    animateIt('.line',3000);
+    animateIt('.port-container,.slick-arrow',4500);
 });
 function endLoading(){
     var loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 100 } );
@@ -18,11 +18,38 @@ function endLoading(){
         loader.hide();
     }, 2000 );
 }
-function animate(element, delay = 0){
+function animateIt(element, delay = 0){
     setTimeout( function() {
         $(element).addClass('go');
     }, delay );
+}
 
+
+function animateGroup(){
+    $('#body .animate').each(function(){
+        if (checkVisible( $(this).get(0)) ) {
+            $(this).addClass('go');
+        }
+    });
+}
+
+function animateVisible(element, delay = 0){
+    if( checkVisible( $(element).parent().get(0) ) )
+        setTimeout( function() {
+            $(element).addClass('go');
+        }, delay );
+}
+function removeAnimation(){
+    $('#body .animate.go').each(function(){
+        if ( !checkVisible( $(this).get(0)) ) {
+            $(this).removeClass('go');
+        }
+    });
+}
+function checkVisible(elm) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
 
 //smooth scrolling

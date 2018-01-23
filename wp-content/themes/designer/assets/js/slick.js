@@ -3027,3 +3027,6 @@ $(document).ready(function () {
         }
     });
 });
+$(window).on('load',function () {
+    animateIt('.port-container, .slick-arrow',4500);
+});
