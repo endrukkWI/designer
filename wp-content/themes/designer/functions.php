@@ -36,7 +36,7 @@ function blank_customizer_cleanup($wp_customize){
 add_action( 'customize_register', 'blank_customizer_cleanup');
 
 function add_extra_js(){
-    $extraJs = get_field('extra-js');
+    $extraJs = get_field('extra_js');
     if($extraJs && $extraJs != ""){
         $themeDir = get_template_directory_uri();
         $extraJs = explode(',',$extraJs);
@@ -47,7 +47,7 @@ function add_extra_js(){
 add_action( 'extra_js', 'add_extra_js');
 
 function add_extra_css(){
-    $extraCss = get_field('extra-css');
+    $extraCss = get_field('extra_css');
     if($extraCss && $extraCss != ""){
         $themeDir = get_template_directory_uri();
         $extraCss = explode(',',$extraCss);

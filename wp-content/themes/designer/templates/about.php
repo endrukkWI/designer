@@ -1,20 +1,24 @@
 <?php /* Template Name: About */
 
 get_header();
+$baseUrl = get_site_url();
 ?>
 
 <div id="content">
 
     <?php
-//        include header file
         include('include/header.php');
     ?>
 
     <div id="body">
         <section class="about">
             <div class="left">
-                <!--svg-->
-                <video src=""></video>
+                <video width="640" height="480" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="<?= $baseUrl; ?>/wp-content/uploads/about/videos/beginning.mp4" type="video/mp4">
+                </video>
+                <div class="cover">
+                    <img src="<?= $baseUrl; ?>/wp-content/uploads/about/covers/beginning.png" alt="stg">
+                </div>
             </div>
             <div class="right">
                 <div class="large-text">
@@ -43,14 +47,22 @@ get_header();
                 </div>
             </div>
             <div class="right">
-                <!--svg-->
-                <!--video-->
+                <video width="640" height="480" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="<?= $baseUrl; ?>/wp-content/uploads/about/videos/change.mp4" type="video/mp4">
+                </video>
+                <div class="cover">
+                    <img src="<?= $baseUrl; ?>/wp-content/uploads/about/covers/change.png" alt="stg">
+                </div>
             </div>
         </section>
         <section class="about">
             <div class="left">
-                <!--svg-->
-                <!--video-->
+                <video width="640" height="480" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="<?= $baseUrl; ?>/wp-content/uploads/about/videos/present.mp4" type="video/mp4">
+                </video>
+                <div class="cover">
+                    <img src="<?= $baseUrl; ?>/wp-content/uploads/about/covers/present.png" alt="stg">
+                </div>
             </div>
             <div class="right">
                 <div class="large-text">
@@ -79,8 +91,12 @@ get_header();
                 </div>
             </div>
             <div class="right">
-                <!--svg-->
-                <!--video-->
+                <video width="640" height="480" autoplay="autoplay" muted="muted" loop="loop">
+                    <source src="<?= $baseUrl; ?>/wp-content/uploads/about/videos/future.mp4" type="video/mp4">
+                </video>
+                <div class="cover">
+                    <img src="<?= $baseUrl; ?>/wp-content/uploads/about/covers/future.png" alt="stg">
+                </div>
             </div>
         </section>
 
